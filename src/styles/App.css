@@ -192,3 +192,22 @@ textarea.auto-grow {
   max-height: 500px;
   height: auto;
 }
+
+@media (max-width: 600px) {
+  .with-form {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  header {
+    flex-direction: column;
+  }
+  button {
+    width: 50%;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}
