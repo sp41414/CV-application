@@ -73,8 +73,43 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: oklch(20.8% 0.042 265.755);
 }
 
 main {
   display: flex;
+}
+
+footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  gap: 1em;
+  padding: 1rem;
+  background-color: oklch(20.8% 0.042 265.755);
+}
+
+footer p {
+  margin: 0px;
+}
+
+footer a {
+  /* makes it slightly more on-level with the CV App text */
+  height: 32px;
+}
+
+svg {
+  width: 32px;
+  fill: white;
+  transition: transform 0.3s;
+}
+
+svg:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }
