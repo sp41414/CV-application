@@ -10,7 +10,7 @@ type Data = {
 
 interface PracticalInfoProps {
   practicalInfo: Data;
-  setPracticalInfo: React.Dispatch<React.SetStateAction<Data>>;
+  setPracticalInfo: (practicalInfo: Data) => void;
 }
 
 export default function PracticalInfoForm({

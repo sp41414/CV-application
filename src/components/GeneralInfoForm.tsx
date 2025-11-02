@@ -7,7 +7,7 @@ type Data = {
 };
 interface GeneralInfoProps {
   generalInfo: Data;
-  setGeneralInfo: React.Dispatch<React.SetStateAction<Data>>;
+  setGeneralInfo: (generalInfo: Data) => void;
 }
 
 export default function GeneralInfoForm({

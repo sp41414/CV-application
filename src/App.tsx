@@ -20,13 +20,18 @@ function App() {
     },
   });
 
+  const [submit, setSubmit] = useState(true);
+
   return (
     <>
       <header>
         <h1>CV Maker</h1>
+        <button type="button" onClick={() => setSubmit(!submit)}>
+          {submit ? "Submit" : "Edit"}
+        </button>
       </header>
-      <main>
-        <InputForm setData={setData} data={data} />
+      <main className={submit ? "with-form" : "full-cv"}>
+        {submit && <InputForm setData={setData} data={data} />}
         <CV data={data} />
       </main>
       <footer>

@@ -8,7 +8,7 @@ type Data = {
 
 interface EducationInfoProps {
   educationInfo: Data;
-  setEducationInfo: React.Dispatch<React.SetStateAction<Data>>;
+  setEducationInfo: (educationInfo: Data) => void;
 }
 
 export default function EducationInfoForm({
