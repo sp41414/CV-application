@@ -5,4 +5,4 @@
 1. Take a user's input
 2. Format it into a CV
 
-# W.I.P
+> Preview: https://cv-application-1st.pages.dev/
