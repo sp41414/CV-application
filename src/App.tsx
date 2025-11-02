@@ -1,16 +1,33 @@
+import { useState } from "react";
 import "./styles/App.css";
 import CV from "./components/CV";
 import InputForm from "./components/InputForm";
 
 function App() {
+  const [data, setData] = useState({
+    generalInfo: { name: "", email: "", phone: "" },
+    educationInfo: {
+      schoolName: "",
+      titleOfStudy: "",
+      dateOfStudy: "",
+    },
+    practicalInfo: {
+      companyName: "",
+      positionTitle: "",
+      mainResponsibilities: "",
+      dateFrom: "",
+      dateTo: "",
+    },
+  });
+
   return (
     <>
       <header>
         <h1>CV Maker</h1>
       </header>
       <main>
-        <InputForm />
-        <CV />
+        <InputForm setData={setData} data={data} />
+        <CV data={data} />
       </main>
       <footer>
         <p>CV App</p>

@@ -1,16 +1,16 @@
-type Data = {
-  generalInfo: { name: string; email: string; phone: number };
+export type Data = {
+  generalInfo: { name: string; email: string; phone: string };
   educationInfo: {
     schoolName: string;
     titleOfStudy: string;
-    dateOfStudy: Date;
+    dateOfStudy: string;
   };
   practicalInfo: {
     companyName: string;
     positionTitle: string;
     mainResponsibilities: string;
-    dateFrom: Date;
-    dateTo: Date;
+    dateFrom: string;
+    dateTo: string;
   };
 };
 interface CVProps {
@@ -26,9 +26,8 @@ export default function CV({ data }: CVProps) {
         <span className="bold">Email:</span> {data.generalInfo.email}
       </p>
       <p>
-        <span className="bold">Phone Number:</span> {data.generalInfo.phone}{" "}
+        <span className="bold">Phone Number:</span> {data.generalInfo.phone}
       </p>
-
       <h2>Education</h2>
       <p>
         <span className="bold">School:</span> {data.educationInfo.schoolName}
@@ -39,19 +38,15 @@ export default function CV({ data }: CVProps) {
       </p>
       <p>
         <span className="bold">Date Of Study:</span>{" "}
-        {data.educationInfo.dateOfStudy
-          .toISOString()
-          .slice(0, 10)
-          .replace(/-/g, "/")}
+        {data.educationInfo.dateOfStudy.replace(/-/g, "/")}
       </p>
-
       <h2>Work Experience</h2>
       <p>
         <span className="bold">Company Name:</span>{" "}
         {data.practicalInfo.companyName}
       </p>
       <p>
-        <span className="bold">Position Title:</span>
+        <span className="bold">Position Title:</span>{" "}
         {data.practicalInfo.positionTitle}
       </p>
       <p>
@@ -59,16 +54,8 @@ export default function CV({ data }: CVProps) {
       </p>
       <p>{data.practicalInfo.mainResponsibilities}</p>
       <p>
-        Worked from{" "}
-        {data.practicalInfo.dateFrom
-          .toISOString()
-          .slice(0, 10)
-          .replace(/-/g, "/")}{" "}
-        To{" "}
-        {data.practicalInfo.dateTo
-          .toISOString()
-          .slice(0, 10)
-          .replace(/-/g, "/")}
+        Worked from {data.practicalInfo.dateFrom.replace(/-/g, "/")} To{" "}
+        {data.practicalInfo.dateTo.replace(/-/g, "/")}
       </p>
     </div>
   );

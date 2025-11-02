@@ -19,6 +19,17 @@ body {
   min-height: 100vh;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 h1,
 h2,
 h3,
@@ -62,7 +73,7 @@ select {
 input:focus,
 textarea:focus,
 select:focus {
-  transform: scale(1.05);
+  transform: scale(1.01); /* very, very, very subtle */
   border-color: oklch(37.2% 0.044 257.287);
 }
 
@@ -77,13 +88,15 @@ header {
 }
 
 main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1em;
+  gap: 1rem;
+  flex-grow: 1;
 }
 
 footer {
   display: flex;
-  position: fixed;
-  bottom: 0;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -116,4 +129,50 @@ svg:hover {
 
 .bold {
   font-weight: bold;
+}
+
+/* form */
+section,
+.main-responsibilities-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+label {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.cv {
+  background-color: white;
+  padding: 1rem;
+}
+.cv * {
+  color: black;
+}
+
+.cv h1,
+.cv h2 {
+  margin-bottom: 1rem;
+}
+
+textarea {
+  min-height: 150px;
+  padding: 0.75rem;
+  resize: vertical;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+textarea.auto-grow {
+  overflow: hidden;
+  min-height: 150px;
+  max-height: 500px;
+  height: auto;
 }
