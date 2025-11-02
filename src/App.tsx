@@ -1,5 +1,6 @@
 import "./styles/App.css";
-
+import CV from "./components/CV";
+import InputForm from "./components/InputForm";
 
 function App() {
   return (
@@ -7,7 +8,10 @@ function App() {
       <header>
         <h1>CV Maker</h1>
       </header>
-      <main></main>
+      <main>
+        <InputForm />
+        <CV />
+      </main>
     </>
   );
 }
